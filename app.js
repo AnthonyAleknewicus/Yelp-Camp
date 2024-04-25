@@ -2,9 +2,9 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override')
-const Campground = require('./models/campground');
+const engine = require('ejs-mate');
 
-const app = express();
+const Campground = require('./models/campground');
 
 main().catch(err => console.log(err));
 
@@ -12,6 +12,10 @@ async function main() {
     await mongoose.connect('mongodb://localhost:27017/yelp-camp');
     await console.log('Database CONNECTED!')
 }
+
+const app = express();
+
+app.engine('ejs', engine);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -62,5 +66,5 @@ app.delete('/campgrounds/:id', async (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log('CONNECTED ON PORT 3000!')
+    console.log('CONNECTED ON PORT 3000!');
 })
