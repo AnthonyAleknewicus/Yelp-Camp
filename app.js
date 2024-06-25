@@ -77,7 +77,7 @@ app.get('/fakeUser', async (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.redirect('/campgrounds')
 })
 
 app.all('*', (req, res, next) => {
