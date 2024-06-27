@@ -1,4 +1,5 @@
 <% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/stars.css">
 
 <div class="row">
     <div class="col-6">
@@ -57,8 +58,11 @@
     <% for(let review of campground.reviews) { %>
       <div class="card mb-3">
         <div class="card-body"> 
-          <div class="card-title">
-            <h5><%= review.rating %> Stars</h5>
+          <div class="card-title mb-3">
+            <h5 class="starability-result" data-rating="<%= review.rating %>"><%= review.rating %> Stars
+              Rated: <%= review.rating %> stars
+            </h5>
+
             <h6 class="card-subtitle mb-2 text-muted">User: <%= review.author.username %></h6>
           </div>
           <div class="card-text"><%= review.body %></div> 
