@@ -11,4 +11,5 @@ mapboxgl.accessToken = mapToken;
         .setPopup(new mapboxgl.Popup({ closeButton: false, maxWidth: '200px', offset: 25 }).setHTML(`<h3>${campground.title}</h3><h5>${campground.location}</h5>`))
         .addTo(map);
 
+    map.addControl(new mapboxgl.NavigationControl());
         

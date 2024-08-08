@@ -3,7 +3,8 @@ const { campgroundSchema } = require('../schemas');
 const Review = require('./review');
 const Schema = mongoose.Schema;
 
-// https://res.cloudinary.com/dlarslo8z/image/upload/v1720284452/YelpCamp/ck3xgzp4iubcsw8vrzow.jpg
+// https://res.cloudinary.com/dlarslo8z/image/upload/v1720284452/YelpCamp/.jpg
+
 
 const ImageSchema = new Schema({
         url: String,
